@@ -1,0 +1,85 @@
+{
+    "data": [
+        {
+            "type": "number",
+            "order": "random",
+            "quantity": "10k",
+            "bubble": 0.0004479120034375228,
+            "heap": 0.029969715003971942,
+            "insertion": 0.0009158140019280836,
+            "merge": 0.020581836994097102
+        },
+        {
+            "type": "number",
+            "order": "random",
+            "quantity": "50k",
+            "bubble": 0.0023385189997497946,
+            "heap": 0.182389317000343,
+            "insertion": 0.005104919997393154,
+            "merge": 0.11670495200087316
+        },
+        {
+            "type": "number",
+            "order": "random",
+            "quantity": "100k",
+            "bubble": 0.004504115997406188,
+            "heap": 0.3664296330025536,
+            "insertion": 0.008373413998924661,
+            "merge": 0.25173998999525793
+        },
+        {
+            "type": "number",
+            "order": "descending",
+            "quantity": "10k",
+            "bubble": 0.0007316680057556368,
+            "heap": 0.032681409997167066,
+            "insertion": 0.0013301040016813204,
+            "merge": 0.015797045998624526
+        },
+        {
+            "type": "number",
+            "order": "descending",
+            "quantity": "50k",
+            "bubble": 0.002331370000320021,
+            "heap": 0.1640761289963848,
+            "insertion": 0.004732380999485031,
+            "merge": 0.0884397639965755
+        },
+        {
+            "type": "number",
+            "order": "descending",
+            "quantity": "100k",
+            "bubble": 0.005014879003283568,
+            "heap": 0.3601236569957109,
+            "insertion": 0.008834225998725742,
+            "merge": 0.18417793599655852
+        },
+        {
+            "type": "number",
+            "order": "ascending",
+            "quantity": "10k",
+            "bubble": 0.00046862199815222993,
+            "heap": 0.03008587100339355,
+            "insertion": 0.0008649130031699315,
+            "merge": 0.014431295996473636
+        },
+        {
+            "type": "number",
+            "order": "ascending",
+            "quantity": "50k",
+            "bubble": 0.0022476279991678894,
+            "heap": 0.1699648639987572,
+            "insertion": 0.004435732997080777,
+            "merge": 0.08376765200227965
+        },
+        {
+            "type": "number",
+            "order": "ascending",
+            "quantity": "100k",
+            "bubble": 0.005136687002959661,
+            "heap": 0.3563144529980491,
+            "insertion": 0.00856164099968737,
+            "merge": 0.17759524899884127
+        }
+    ]
+}
