@@ -1,6 +1,5 @@
 import time
 import random
-import pandas as pd
 from datetime import datetime
 import json
 
@@ -137,7 +136,7 @@ class Utils:
 
         return result
 
-    def generate_numbers(self, count):
+    def generate_random(self, count):
         items = []
 
         for i in range(0, count):
@@ -147,13 +146,31 @@ class Utils:
 
         return items
 
+    def generate_descending(self, count):
+        items = []
+
+        for i in range(count, 0, -1):
+            items.append(i)
+
+        return items
+
+    def generate_ascending(self, count):
+        items = []
+
+        for i in range(0, count):
+            items.append(i)
+
+        return items
+
 
 sort = Sort()
 util = Utils()
 
-random_number_10k = util.generate_numbers(10000)
-random_number_50k = util.generate_numbers(50000)
-random_number_100k = util.generate_numbers(100000)
+# Random
+
+random_number_10k = util.generate_random(10000)
+random_number_50k = util.generate_random(50000)
+random_number_100k = util.generate_random(100000)
 
 random_10k_bubble = util.count_time('Running "random - number - 10k - bubble"', sort.bubble, random_number_10k)
 random_10k_heap = util.count_time('Running "random - number - 10k - heap"', sort.heap, random_number_10k)
@@ -170,31 +187,70 @@ random_100k_heap = util.count_time('Running "random - number - 100k - heap"', so
 random_100k_insertion = util.count_time('Running "random - number - 100k - insertion"', sort.insertion, random_number_100k)
 random_100k_merge = util.count_time('Running "random - number - 100k - merge"', sort.merge, random_number_100k)
 
-items = [
-    # Random
-    {"type": 'number', "order": 'random', "quantity": '10k', "bubble": random_10k_bubble,
-     "heap": random_10k_heap, "insertion": random_10k_insertion, "merge": random_10k_merge},
-    {"type": 'number', "order": 'random', "quantity": '50k', "bubble": random_50k_bubble,
-     "heap": random_50k_heap, "insertion": random_50k_insertion, "merge": random_50k_merge},
-    {"type": 'number', "order": 'random', "quantity": '100k', "bubble": random_100k_bubble,
-     "heap": random_100k_heap, "insertion": random_100k_insertion, "merge": random_100k_merge},
-    # Descending
-    # {"type": 'number', "order": 'descending', "quantity": '10k', "bubble": descending_10k_bubble.result, "heap": descending_10k_heap.result, "insertion": descending_10k_insertion.result, "merge": descending_10k_merge.result},
-    # {"type": 'number', "order": 'descending', "quantity": '50k', "bubble": descending_50k_bubble.result, "heap": descending_50k_heap.result, "insertion": descending_50k_insertion.result, "merge": descending_50k_merge.result},
-    # {"type": 'number', "order": 'descending', "quantity": '100k', "bubble": descending_100k_bubble.result, "heap": descending_100k_heap.result, "insertion": descending_100k_insertion.result, "merge": descending_100k_merge.result},
-    # Descending
-    # {"type": 'number', "order": 'ascending', "quantity": '10k', "bubble": ascending_10k_bubble.result, "heap": ascending_10k_heap.result, "insertion": ascending_10k_insertion.result, "merge": ascending_10k_merge.result},
-    # {"type": 'number', "order": 'ascending', "quantity": '50k', "bubble": ascending_50k_bubble.result, "heap": ascending_50k_heap.result, "insertion": ascending_50k_insertion.result, "merge": ascending_50k_merge.result},
-    # {"type": 'number', "order": 'ascending', "quantity": '100k', "bubble": ascending_100k_bubble.result, "heap": ascending_100k_heap.result, "insertion": ascending_100k_insertion.result, "merge": ascending_100k_merge.result},
-]
+# Descending
+
+descending_number_10k = util.generate_descending(10000)
+descending_number_50k = util.generate_descending(50000)
+descending_number_100k = util.generate_descending(100000)
+
+descending_10k_bubble = util.count_time('Running "descending - number - 10k - bubble"', sort.bubble, descending_number_10k)
+descending_10k_heap = util.count_time('Running "descending - number - 10k - heap"', sort.heap, descending_number_10k)
+descending_10k_insertion = util.count_time('Running "descending - number - 10k - insertion"', sort.insertion, descending_number_10k)
+descending_10k_merge = util.count_time('Running "descending - number - 10k - merge"', sort.merge, descending_number_10k)
+
+descending_50k_bubble = util.count_time('Running "descending - number - 50k - bubble"', sort.bubble, descending_number_50k)
+descending_50k_heap = util.count_time('Running "descending - number - 50k - heap"', sort.heap, descending_number_50k)
+descending_50k_insertion = util.count_time('Running "descending - number - 50k - insertion"', sort.insertion, descending_number_50k)
+descending_50k_merge = util.count_time('Running "descending - number - 50k - merge"', sort.merge, descending_number_50k)
+
+descending_100k_bubble = util.count_time('Running "descending - number - 100k - bubble"', sort.bubble, descending_number_100k)
+descending_100k_heap = util.count_time('Running "descending - number - 100k - heap"', sort.heap, descending_number_100k)
+descending_100k_insertion = util.count_time('Running "descending - number - 100k - insertion"', sort.insertion, descending_number_100k)
+descending_100k_merge = util.count_time('Running "descending - number - 100k - merge"', sort.merge, descending_number_100k)
+
+# Ascending
+
+ascending_number_10k = util.generate_ascending(10000)
+ascending_number_50k = util.generate_ascending(50000)
+ascending_number_100k = util.generate_ascending(100000)
+
+ascending_10k_bubble = util.count_time('Running "ascending - number - 10k - bubble"', sort.bubble, ascending_number_10k)
+ascending_10k_heap = util.count_time('Running "ascending - number - 10k - heap"', sort.heap, ascending_number_10k)
+ascending_10k_insertion = util.count_time('Running "ascending - number - 10k - insertion"', sort.insertion, ascending_number_10k)
+ascending_10k_merge = util.count_time('Running "ascending - number - 10k - merge"', sort.merge, ascending_number_10k)
+
+ascending_50k_bubble = util.count_time('Running "ascending - number - 50k - bubble"', sort.bubble, ascending_number_50k)
+ascending_50k_heap = util.count_time('Running "ascending - number - 50k - heap"', sort.heap, ascending_number_50k)
+ascending_50k_insertion = util.count_time('Running "ascending - number - 50k - insertion"', sort.insertion, ascending_number_50k)
+ascending_50k_merge = util.count_time('Running "ascending - number - 50k - merge"', sort.merge, ascending_number_50k)
+
+ascending_100k_bubble = util.count_time('Running "ascending - number - 100k - bubble"', sort.bubble, ascending_number_100k)
+ascending_100k_heap = util.count_time('Running "ascending - number - 100k - heap"', sort.heap, ascending_number_100k)
+ascending_100k_insertion = util.count_time('Running "ascending - number - 100k - insertion"', sort.insertion, ascending_number_100k)
+ascending_100k_merge = util.count_time('Running "ascending - number - 100k - merge"', sort.merge, ascending_number_100k)
+
+data = {
+    "random": {
+        "10k": { "bubble": random_10k_bubble, "heap": random_10k_heap, "insertion": random_10k_insertion, "merge": random_10k_merge },
+        "50k": { "bubble": random_50k_bubble, "heap": random_50k_heap, "insertion": random_50k_insertion, "merge": random_50k_merge },
+        "100k": { "bubble": random_100k_bubble, "heap": random_100k_heap, "insertion": random_100k_insertion, "merge": random_100k_merge },
+    },
+    "descending": {
+        "10k": { "bubble": descending_10k_bubble, "heap": descending_10k_heap, "insertion": descending_10k_insertion, "merge": descending_10k_merge },
+        "50k": { "bubble": descending_50k_bubble, "heap": descending_50k_heap, "insertion": descending_50k_insertion, "merge": descending_50k_merge },
+        "100k": { "bubble": descending_100k_bubble, "heap": descending_100k_heap, "insertion": descending_100k_insertion, "merge": descending_100k_merge },
+    },
+    "ascending": {
+        "10k": { "bubble": ascending_10k_bubble, "heap": ascending_10k_heap, "insertion": ascending_10k_insertion, "merge": ascending_10k_merge },
+        "50k": { "bubble": ascending_50k_bubble, "heap": ascending_50k_heap, "insertion": ascending_50k_insertion, "merge": ascending_50k_merge },
+        "100k": { "bubble": ascending_100k_bubble, "heap": ascending_100k_heap, "insertion": ascending_100k_insertion, "merge": ascending_100k_merge }
+    }
+}
 
 now = datetime.now()
 iso = now.isoformat()
 
-to_write = {"data": items}
-
 with open(f"data/{iso.replace(':', '-')}.json", 'w') as file:
-    json.dump(to_write, file)
+    json.dump(data, file)
 
-table = pd.DataFrame(items)
-print(table)
+print(data)
